@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <FrameLayout
+        android:id="@+id/placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            tools:context="com.example.mxx62.findit.DetailActivity">
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/detail.appbar"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:fitsSystemWindows="true"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <android.support.design.widget.CollapsingToolbarLayout
+                    android:id="@+id/account.collapsing"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    app:contentScrim="?attr/colorPrimary"
+                    app:expandedTitleMarginEnd="64dp"
+                    app:expandedTitleMarginStart="48dp"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/ImageViewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    </android.support.v4.view.ViewPager>
+
+
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/detail.toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        app:layout_collapseMode="pin"
+                        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+                </android.support.design.widget.CollapsingToolbarLayout>
+            </android.support.design.widget.AppBarLayout>
+
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/float_plus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginRight="@dimen/fab_margin_right"
+                android:clickable="true"
+                android:elevation="6dp"
+                android:src="@drawable/ic_action_add"
+                app:layout_anchor="@+id/detail.appbar"
+                app:layout_anchorGravity="bottom|right"
+                app:pressedTranslationZ="12dp" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/mapfloatbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|left"
+                android:layout_marginBottom="30dp"
+                android:layout_marginRight="@dimen/fab_margin_right"
+                android:clickable="true"
+                android:elevation="6dp"
+                android:src="@drawable/mapmarker"
+                android:visibility="invisible"
+                app:backgroundTint="@color/fab1"
+                app:layout_anchor="@+id/detail.appbar"
+                app:layout_anchorGravity="center_vertical|right"
+                app:pressedTranslationZ="12dp"
+                app:srcCompat="@drawable/mapmarker" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/reviewfloatbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="60dp"
+                android:layout_marginRight="@dimen/fab_margin_right"
+                android:clickable="true"
+                android:elevation="6dp"
+                android:src="@drawable/ic_rate_review_black_24dp"
+                android:visibility="invisible"
+                app:backgroundTint="@color/fab2"
+                app:layout_anchor="@+id/detail.appbar"
+                app:layout_anchorGravity="center_vertical|right"
+                app:pressedTranslationZ="12dp"
+                 />
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <RelativeLayout
+                    android:id="@+id/moviefrag"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:baselineAligned="false"
+                    android:orientation="vertical"
+                    android:weightSum="1"
+                    tools:context="com.example.mxx62.a07_jyin08.movie_fragment">
+
+                    <TextView
+                        android:id="@+id/nameRest"
+                        android:layout_width="187dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:fontFamily="cursive"
+                        android:paddingLeft="0dp"
+                        android:text="nameRest"
+                        android:textAlignment="textStart"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0"
+                        tools:layout_alignParentRight="true" />
+
+                    <TextView
+                        android:id="@+id/phoneRest"
+                        android:layout_width="104dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/nameRest"
+                        android:layout_toEndOf="@+id/nameRest"
+                        android:fontFamily="cursive"
+                        android:paddingLeft="20dp"
+                        android:text="phoneRest"
+                        android:textAlignment="textStart"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:textSize="18sp"
+                        android:textStyle="bold|italic"
+                        android:typeface="monospace"
+                        app:layout_constraintHorizontal_bias="0.685"
+                        tools:layout_editor_absoluteY="83dp" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBarRest"
+                        style="?android:attr/ratingBarStyleIndicator"
+                        android:layout_width="185dp"
+                        android:layout_height="38dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/nameRest"
+                        android:layout_marginTop="35dp"
+                        android:numStars="5"
+                        android:rating="0"
+                        tools:layout_editor_absoluteX="197dp"
+                        tools:layout_editor_absoluteY="141dp" />
+
+                    <TextView
+                        android:id="@+id/ratingRest"
+                        android:layout_width="46dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/price"
+                        android:layout_alignBottom="@+id/price"
+                        android:layout_toEndOf="@+id/ratingBarRest"
+                        android:fontFamily="serif"
+                        android:gravity="end"
+                        android:text="9.9"
+                        android:textAppearance="@style/TextAppearance.AppCompat"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:textSize="24sp"
+                        tools:layout_editor_absoluteX="338dp"
+                        tools:layout_editor_absoluteY="188dp" />
+
+                    <TextView
+                        android:id="@+id/reviewNum"
+                        android:layout_width="46dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignEnd="@+id/ratingRest"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/ratingBarRest"
+                        android:fontFamily="serif"
+                        android:gravity="end"
+                        android:text="9.9"
+                        android:textAlignment="textStart"
+                        android:textAppearance="@style/TextAppearance.AppCompat"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:textSize="24sp"
+                        tools:layout_editor_absoluteX="338dp"
+                        tools:layout_editor_absoluteY="188dp" />
+
+                    <TextView
+                        android:id="@+id/price"
+                        android:layout_width="46dp"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/reviewNum"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="46dp"
+                        android:fontFamily="serif"
+                        android:gravity="end"
+                        android:text="9.9"
+                        android:textAlignment="textStart"
+                        android:textAppearance="@style/TextAppearance.AppCompat"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:textSize="24sp"
+                        tools:layout_editor_absoluteX="338dp"
+                        tools:layout_editor_absoluteY="188dp" />
+
+
+                    <TextView
+                        android:id="@+id/addressRest"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/nameRest"
+                        android:fontFamily="serif"
+                        android:paddingLeft="7.7dp"
+                        android:text="addressRest"
+                        android:textAppearance="@style/TextAppearance.AppCompat"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:textIsSelectable="true"
+                        android:textSize="17sp"
+                        android:theme="@android:style/Theme.WithActionBar"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="383dp" />
+
+                    <LinearLayout
+                        android:id="@+id/container2"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/reviewNum"
+                        android:orientation="vertical">
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </android.support.v4.widget.NestedScrollView>
+
+        </android.support.design.widget.CoordinatorLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragholder"
+        android:visibility="gone">
+    </FrameLayout>
+</LinearLayout>
+
+
+
+
+
+

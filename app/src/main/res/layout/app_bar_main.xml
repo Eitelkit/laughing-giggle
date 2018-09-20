@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.example.mxx62.findit.MainActivity">
+
+
+    <include layout="@layout/content_main" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_dialog_map" />
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_scrollFlags="enterAlwaysCollapsed|scroll">
+
+            <LinearLayout
+                android:id="@+id/parentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical"
+                app:layout_scrollFlags="enterAlwaysCollapsed|scroll">
+
+                <Button
+                    android:id="@+id/typeToggle"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:alpha="100"
+                    android:drawablePadding="2dp"
+                    android:drawableRight="@drawable/color_cursor_white"
+                    android:elevation="0dp"
+                    android:onClick="ToggleFoodView"
+                    android:text="Type of food"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold" />
+
+
+
+                <LinearLayout
+                    android:id="@+id/linearBro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    app:layout_scrollFlags="enterAlwaysCollapsed|scroll">
+
+                    <LinearLayout
+                        android:id="@+id/list1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        app:layout_scrollFlags="enterAlwaysCollapsed|scroll">
+
+
+                        <ToggleButton
+                            android:id="@+id/KoreanFoodBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ToggleButton"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+                            android:textOff="Korean"
+                            android:textOn="Korean" />
+
+                        <ToggleButton
+                            android:id="@+id/VietButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+                            android:textOff="Viet"
+                            android:textOn="Viet" />
+
+                        <ToggleButton
+                            android:id="@+id/ItalianButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+                            android:textOff="Italian"
+                            android:textOn="Italian" />
+
+                        <ToggleButton
+                            android:id="@+id/ChineseButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ToggleButton"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+                            android:textOff="Chinese"
+                            android:textOn="Chinese" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/list2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        app:layout_scrollFlags="enterAlwaysCollapsed|scroll">
+
+                        <ToggleButton
+                            android:id="@+id/BurgerButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ToggleButton"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+                            android:textOff="Burger &amp; Sandwich"
+                            android:textOn="Burger &amp; Sandwich" />
+
+                        <ToggleButton
+                            android:id="@+id/IndianButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ToggleButton"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+                            android:textOff="Indian"
+                            android:textOn="Indian" />
+
+                        <ToggleButton
+                            android:id="@+id/JapaneseButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ToggleButton"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+                            android:textOff="Japanese"
+                            android:textOn="Japanese" />
+
+                        <ToggleButton
+                            android:id="@+id/FastFood"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ToggleButton"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+                            android:textOff="Fast Food"
+                            android:textOn="Fast Food" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_main_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="enterAlways|scroll"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+
+    </android.support.design.widget.AppBarLayout>
+
+</android.support.design.widget.CoordinatorLayout>
+
+
+<!--<LinearLayout
+android:layout_width="wrap_content"
+android:layout_height="40dp"
+android:orientation="horizontal">
+
+<Button
+    android:text="Black"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/blacklistbtn"/>
+
+<Button
+    android:text="Restaurant"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/restBtn"/>
+
+<Button
+    android:text="Favorite"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/favoritelistBtn"/>
+
+
+
+</LinearLayout>-->
+
+<!--
+<LinearLayout
+android:id="@+id/tow_row"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:orientation="horizontal">
+
+<Button
+    android:id="@+id/button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:onClick="ToggleAll"
+    android:text="Toggle All"
+    android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
+
+</LinearLayout>-->
+
